@@ -1,0 +1,52 @@
+﻿@model RHQuercus.Persona
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Desea eliminar este colaborador?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Identificación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCedula)
+        </dd>
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>       
+
+        <dt>
+            Ocupación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ocupacion1.NombreOcu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        </div>
+    }
+</div>

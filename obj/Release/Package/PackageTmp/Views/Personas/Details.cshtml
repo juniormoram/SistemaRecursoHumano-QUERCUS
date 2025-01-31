@@ -1,0 +1,109 @@
+﻿@model RHQuercus.Persona
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Información del colaborador</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+        <dt>
+            Ocupación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ocupacion1.NombreOcu)
+        </dd>
+        <hr />
+        <dt>
+            Dirección
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Celular)
+        </dd>
+
+        <dt>
+            Correo electrónico
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+        <hr />
+        @*<dt>
+           Estado del colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>*@
+
+        <dt>
+            Fecha de ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+
+        <dt>
+            Cant. vacaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantVacaciones)
+        </dd>
+        <hr />
+        <dt>
+            Nombre parentesco
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreContacto)
+        </dd>
+
+        <dt>
+            Parentesco
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentescoContacto)
+        </dd>
+
+        <dt>
+            Celular parentesco
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CelularContacto)
+        </dd>
+
+    </dl>
+</div>
+

@@ -1,0 +1,29 @@
+﻿@model RHQuercus.Estado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Desea eliminar este estado de solicitudes?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Estado de solicitud
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadoSolicitud)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar estado" class="btn btn-danger" /> |           
+        </div>
+    }
+</div>

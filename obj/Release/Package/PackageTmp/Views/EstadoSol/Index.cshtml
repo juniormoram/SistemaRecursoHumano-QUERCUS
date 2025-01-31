@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RHQuercus.Estado>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Estados de solicitudes</h2>
+
+<p>
+    @Html.ActionLink("Registrar nuevo estado de solicitudes", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Identificador de solicitud
+        </th>
+        <th>
+            Estado de solicitud
+        </th>        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDEstado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadoSolicitud)
+        </td>
+        <td>
+            @Html.ActionLink("Actualizar estado", "Edit", new { id = item.IDEstado }, new { @class = "btn btn-info" }) |
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e19bba754b242508844330bacec2cc7" Name="Diagram1">
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Aguinaldo" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Estado" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.EvaluacionDesem" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Incapacidad" Width="1.5" PointX="5.25" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Liquidacion" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.MotivoLiq" Width="1.5" PointX="6" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Ocupacion" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.PermisoLaboral" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Persona" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Planilla" Width="1.5" PointX="5.25" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.RegistroMarca" Width="1.5" PointX="5.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.TipoIncapacidad" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.TipoPermiso" Width="1.5" PointX="6" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.TipoRol" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Usuario" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RecursoHumanoQuercusModel.Vacaciones" Width="1.5" PointX="8.25" PointY="21.125" IsExpanded="true" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Aguinaldo__IDCed__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Incapacid__Estad__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Liquidaci__Estad__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__PermisoLa__Estad__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Vacacione__Estad__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Evaluacio__Emple__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Incapacid__Emple__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Incapacid__TipoI__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Liquidaci__Emple__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Liquidaci__Motiv__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Persona__Ocupaci__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__PermisoLa__Emple__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__PermisoLa__TipoP__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Planilla__Emplea__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__RegistroM__IDCed__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Vacacione__Emple__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="RecursoHumanoQuercusModel.FK__Usuario__Rol__75A278F5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

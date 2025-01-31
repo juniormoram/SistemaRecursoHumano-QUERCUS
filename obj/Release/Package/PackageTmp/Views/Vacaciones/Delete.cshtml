@@ -1,0 +1,70 @@
+﻿@model RHQuercus.Vacaciones
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Está seguro de eliminar esta solicitud de vacaciones?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <hr />
+        <dt>
+            Estado de la solicitud
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado1.EstadoSolicitud)
+        </dd>
+        <hr />
+        <dt>
+            Fecha de inicio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            Fecha de finalización
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinal)
+        </dd>
+
+        <dt>
+            Cantidad de días
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantDias)
+        </dd>
+
+        <dt>
+            Observaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |            
+        </div>
+    }
+</div>

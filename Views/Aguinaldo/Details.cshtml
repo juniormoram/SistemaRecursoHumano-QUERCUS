@@ -1,0 +1,37 @@
+﻿@model RHQuercus.Aguinaldo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Información del aguinaldo</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <hr />
+        <dt>
+            Periodo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Anno)
+        </dd>
+        <dt>
+            Monto del aguinaldo
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.MontoAguinaldo)
+        </dd>
+
+    </dl>
+</div>

@@ -1,0 +1,53 @@
+﻿@model RHQuercus.RegistroMarca
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Está seguro de eliminar este registro de marca?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <dt>
+            Hora de ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraIngreso)
+        </dd>
+
+        <dt>
+            Hora de salida
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraSalida)
+        </dd>
+
+        @*<dt>
+            Observaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        </div>
+    }
+</div>

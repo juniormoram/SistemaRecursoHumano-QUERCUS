@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var userId = TempData["UserId"];
+}
+
+
+<hr />
+<h2 style="text-align: center;"> Bienvenido @userId</h2>
+<hr />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var alertMessage = '@TempData["AlertMessage"]';
+        if (alertMessage) {
+            alert(alertMessage);
+        }
+    });
+</script>
+
+
+
+   
+
+
+
+
+

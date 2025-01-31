@@ -1,0 +1,96 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+<body>
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Administración <i class="fa-solid fa-lock " style="color: #74C0FC;"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="/Personas/Index" class="w3-bar-item w3-button">Colaboradores <i class="fa-sharp fa-solid fa-person " style="color: #74C0FC;"></i></a>
+                <a href="/Ocupacion/Index" class="w3-bar-item w3-button">Ocupaciones <i class="fa-solid fa-briefcase " style="color: #74C0FC;"></i></a>
+                <a href="/TipoRol/Index" class="w3-bar-item w3-button">Roles del sistema <i class="fa-solid fa-dice " style="color: #74C0FC;"></i></a>
+                <a href="/EstadoSol/Index" class="w3-bar-item w3-button">Estados de solicitudes <i class="fa-solid fa-sign-hanging " style="color: #74C0FC;"></i></a>
+                <a href="/MotivoLiq/Index" class="w3-bar-item w3-button">Motivos liquidaciones <i class="fa-solid fa-sign-hanging " style="color: #74C0FC;"></i></a>
+                <a href="/TipoIncapacidad/Index" class="w3-bar-item w3-button">Tipos incapacidades <i class="fa-solid fa-sign-hanging " style="color: #74C0FC;"></i></a>
+                <a href="/TipoPermiso/Index" class="w3-bar-item w3-button">Tipos permisos <i class="fa-solid fa-sign-hanging " style="color: #74C0FC;"></i></a>
+                <a href="/Usuarios/Index" class="w3-bar-item w3-button">Usuarios / Asig. roles <i class="fa-solid fa-user " style="color: #74C0FC;"></i></a>
+            </div>
+        </div>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Consultas y reportes <i class="fa-solid fa-flag " style="color: #74C0FC;"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="/Personas/Index" class="w3-bar-item w3-button">Colaboradores <i class="fa-sharp fa-solid fa-person " style="color: #74C0FC;"></i></a>
+                <a href="/Usuarios/Index" class="w3-bar-item w3-button">Usuarios <i class="fa-solid fa-user " style="color: #74C0FC;"></i></a>
+            </div>
+        </div>
+        <a href="/Planilla/Index" class="w3-bar-item w3-button">Planillas <i class="fa-solid fa-money-check-dollar " style="color: #74C0FC;"></i></a>
+        <a href="~/Vacaciones/Index" class="w3-bar-item w3-button">Vacaciones <i class="fa-solid fa-calendar " style="color: #74C0FC;"></i></a>
+        <a href="/Incapacidad/Index" class="w3-bar-item w3-button">Incapacidades <i class="fa-solid fa-notes-medical " style="color: #74C0FC;"></i></a>
+        <a href="~/PermisoLaboral/Index" class="w3-bar-item w3-button">Permisos laborales <i class="fa-solid fa-calendar " style="color: #74C0FC;"></i></a>
+        <a href="/RegistroMarcas/Index" class="w3-bar-item w3-button">Registro de marcas <i class="fa-solid fa-marker " style="color: #74C0FC;"></i></a>
+        <a href="/Aguinaldo/Index" class="w3-bar-item w3-button">Aguinaldos <i class="fa-solid fa-clock-rotate-left " style="color: #74C0FC;"></i></a>
+        <a href="/Usuarios/" class="w3-bar-item w3-button">Liq. laborales <i class="fa-solid fa-timeline " style="color: #74C0FC;"></i></a>
+        <a href="~/EvaluacionDesem/Index" class="w3-bar-item w3-button">Eva. desempeño <i class="fa-regular fa-flag " style="color: #74C0FC;"></i></a>
+        <a href="/Usuarios/Logout" class="w3-bar-item w3-button">Cerrar sesión <i class="fa-solid fa-right-from-bracket " style="color: #74C0FC;"></i></a>
+
+    </div>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+
+
+
+        <div class="container">
+
+            <!--<div class="navbar-header">-->
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - QUERCUS - Bienvenido </p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="https://kit.fontawesome.com/313258c4cc.js" crossorigin="anonymous"></script>
+
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
+

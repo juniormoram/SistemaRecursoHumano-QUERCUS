@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RecursoHumanoQuercusModelStoreContainer" CdmEntityContainer="RecursoHumanoQuercusEntities">
+    <EntitySetMapping Name="Aguinaldo">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Aguinaldo">
+        <MappingFragment StoreEntitySet="Aguinaldo">
+          <ScalarProperty Name="IDAguinaldo" ColumnName="IDAguinaldo" />
+          <ScalarProperty Name="IDCedula" ColumnName="IDCedula" />
+          <ScalarProperty Name="Anno" ColumnName="Anno" />
+          <ScalarProperty Name="MontoAguinaldo" ColumnName="MontoAguinaldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Estado">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="IDEstado" ColumnName="IDEstado" />
+          <ScalarProperty Name="EstadoSolicitud" ColumnName="EstadoSolicitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EvaluacionDesem">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.EvaluacionDesem">
+        <MappingFragment StoreEntitySet="EvaluacionDesem">
+          <ScalarProperty Name="IDEvaluacion" ColumnName="IDEvaluacion" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="FechaEva" ColumnName="FechaEva" />
+          <ScalarProperty Name="Pregunta1" ColumnName="Pregunta1" />
+          <ScalarProperty Name="Calificacion1" ColumnName="Calificacion1" />
+          <ScalarProperty Name="Pregunta2" ColumnName="Pregunta2" />
+          <ScalarProperty Name="Calificacion2" ColumnName="Calificacion2" />
+          <ScalarProperty Name="Pregunta3" ColumnName="Pregunta3" />
+          <ScalarProperty Name="Calificacion3" ColumnName="Calificacion3" />
+          <ScalarProperty Name="Pregunta4" ColumnName="Pregunta4" />
+          <ScalarProperty Name="Calificacion4" ColumnName="Calificacion4" />
+          <ScalarProperty Name="Pregunta5" ColumnName="Pregunta5" />
+          <ScalarProperty Name="Calificacion5" ColumnName="Calificacion5" />
+          <ScalarProperty Name="CalificacionFinal" ColumnName="CalificacionFinal" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incapacidad">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Incapacidad">
+        <MappingFragment StoreEntitySet="Incapacidad">
+          <ScalarProperty Name="IDIncapacidad" ColumnName="IDIncapacidad" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="TipoIncapacidad" ColumnName="TipoIncapacidad" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CantDias" ColumnName="CantDias" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+          <ScalarProperty Name="MontoEmpresa" ColumnName="MontoEmpresa" />
+          <ScalarProperty Name="MontoInca" ColumnName="MontoInca" />
+          <ScalarProperty Name="MontoIncaTotal" ColumnName="MontoIncaTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Liquidacion">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Liquidacion">
+        <MappingFragment StoreEntitySet="Liquidacion">
+          <ScalarProperty Name="IDLiquidacion" ColumnName="IDLiquidacion" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="SalarioMensual" ColumnName="SalarioMensual" />
+          <ScalarProperty Name="PromedioDiaLaboral" ColumnName="PromedioDiaLaboral" />
+          <ScalarProperty Name="Cesantia" ColumnName="Cesantia" />
+          <ScalarProperty Name="Preaviso" ColumnName="Preaviso" />
+          <ScalarProperty Name="Aguinaldo" ColumnName="Aguinaldo" />
+          <ScalarProperty Name="Vacaciones" ColumnName="Vacaciones" />
+          <ScalarProperty Name="MontoTotalLiq" ColumnName="MontoTotalLiq" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MotivoLiq">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.MotivoLiq">
+        <MappingFragment StoreEntitySet="MotivoLiq">
+          <ScalarProperty Name="IDMotivo" ColumnName="IDMotivo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ocupacion">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Ocupacion">
+        <MappingFragment StoreEntitySet="Ocupacion">
+          <ScalarProperty Name="IDOcupacion" ColumnName="IDOcupacion" />
+          <ScalarProperty Name="NombreOcu" ColumnName="NombreOcu" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisoLaboral">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.PermisoLaboral">
+        <MappingFragment StoreEntitySet="PermisoLaboral">
+          <ScalarProperty Name="IDPermiso" ColumnName="IDPermiso" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="TipoPermiso" ColumnName="TipoPermiso" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+          <ScalarProperty Name="CantDias" ColumnName="CantDias" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+          <ScalarProperty Name="PagoObligatorio" ColumnName="PagoObligatorio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Persona">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Persona">
+        <MappingFragment StoreEntitySet="Persona">
+          <ScalarProperty Name="IDCedula" ColumnName="IDCedula" />
+          <ScalarProperty Name="NombrePers" ColumnName="NombrePers" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Ocupacion" ColumnName="Ocupacion" />
+          <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+          <ScalarProperty Name="CantVacaciones" ColumnName="CantVacaciones" />
+          <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+          <ScalarProperty Name="ParentescoContacto" ColumnName="ParentescoContacto" />
+          <ScalarProperty Name="CelularContacto" ColumnName="CelularContacto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planilla">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Planilla">
+        <MappingFragment StoreEntitySet="Planilla">
+          <ScalarProperty Name="IDPlanilla" ColumnName="IDPlanilla" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Periodo" ColumnName="Periodo" />
+          <ScalarProperty Name="FechaPlanill" ColumnName="FechaPlanill" />
+          <ScalarProperty Name="Salario" ColumnName="Salario" />
+          <ScalarProperty Name="CCSS" ColumnName="CCSS" />
+          <ScalarProperty Name="Renta" ColumnName="Renta" />
+          <ScalarProperty Name="MontoInca" ColumnName="MontoInca" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistroMarca">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.RegistroMarca">
+        <MappingFragment StoreEntitySet="RegistroMarca">
+          <ScalarProperty Name="IDMarca" ColumnName="IDMarca" />
+          <ScalarProperty Name="IDCedula" ColumnName="IDCedula" />
+          <ScalarProperty Name="HoraIngreso" ColumnName="HoraIngreso" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoIncapacidad">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.TipoIncapacidad">
+        <MappingFragment StoreEntitySet="TipoIncapacidad">
+          <ScalarProperty Name="IDTipoInca" ColumnName="IDTipoInca" />
+          <ScalarProperty Name="NombreInca" ColumnName="NombreInca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPermiso">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.TipoPermiso">
+        <MappingFragment StoreEntitySet="TipoPermiso">
+          <ScalarProperty Name="IDTipoPermi" ColumnName="IDTipoPermi" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoRol">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.TipoRol">
+        <MappingFragment StoreEntitySet="TipoRol">
+          <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+          <ScalarProperty Name="NombreRol" ColumnName="NombreRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Salt" ColumnName="Salt" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vacaciones">
+      <EntityTypeMapping TypeName="RecursoHumanoQuercusModel.Vacaciones">
+        <MappingFragment StoreEntitySet="Vacaciones">
+          <ScalarProperty Name="IDVacas" ColumnName="IDVacas" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="CantDias" ColumnName="CantDias" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFinal" ColumnName="FechaFinal" />
+          <ScalarProperty Name="Observacion" ColumnName="Observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,22 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}*@
+
+
+@if (Convert.ToInt32(Session["UserRol"]) == 1)
+{
+    Layout = "~/Views/Shared/_Layout_User.cshtml";
+}
+else if (Convert.ToInt32(Session["UserRol"]) == 2)
+{
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+else if (Convert.ToInt32(Session["UserRol"]) == 3)
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+else if (Convert.ToInt32(Session["UserRol"]) == 4)
+{
+    Layout = "~/Views/Shared/_Layout_Inactivo.cshtml";
+}
+

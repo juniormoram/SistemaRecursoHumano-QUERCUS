@@ -1,0 +1,116 @@
+﻿@model RHQuercus.Liquidacion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles de la liquidación laboral</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <dt>
+            Fecha de ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+
+        <dt>
+            Fecha de salida
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaSalida)
+        </dd>      
+
+        <hr />
+        <dt>
+            Motivo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotivoLiq.Nombre)
+        </dd>
+        <dt>
+            Salario mensual
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.SalarioMensual)
+        </dd>
+
+        <dt>
+            Salario diario
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.PromedioDiaLaboral)
+        </dd>
+        <hr />
+        <dt>
+            Cesantía
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Cesantia)
+        </dd>
+
+        <dt>
+            Preaviso
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Preaviso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aguinaldo)
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Aguinaldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vacaciones)
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Vacaciones)
+        </dd>
+        <Hr />
+        <dt>
+            Total liquidación
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.MontoTotalLiq)
+        </dd>
+
+        <dt>
+            Estado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado1.EstadoSolicitud)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>
+    </dl>
+</div>

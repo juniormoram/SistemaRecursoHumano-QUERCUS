@@ -1,0 +1,51 @@
+﻿@model RHQuercus.Usuario
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Actualizar rol de usuario</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IDUsuario)
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Contrasena)
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Salt)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDUsuario, "Usuario", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.IDUsuario)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Rol, "Rol", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Rol", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Rol, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Actualizar usuario" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

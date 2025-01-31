@@ -1,0 +1,37 @@
+﻿@model IEnumerable<RHQuercus.TipoRol>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Roles de usuario</h2>
+
+@*<p>
+    @Html.ActionLink("Registrar nuevo rol de usuario", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        @*<th>
+            Identificador del rol
+        </th>*@
+        <th>
+            Nombre de rol
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.IDRol)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreRol)
+        </td>
+        <td>
+            @Html.ActionLink("Actualizar rol", "Edit", new { id = item.IDRol }, new { @class = "btn btn-info" }) |
+        </td>
+    </tr>
+}
+
+</table>

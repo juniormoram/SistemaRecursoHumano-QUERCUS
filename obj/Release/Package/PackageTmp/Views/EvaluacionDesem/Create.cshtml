@@ -1,0 +1,149 @@
+﻿@model RHQuercus.EvaluacionDesem
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Evaluación de desempeño</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Empleado, "Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("Empleado", null, "Seleccione el colaborador", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Empleado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.FechaEva, "Fecha de la evaluación", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.FechaEva, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FechaEva, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+    <hr />
+    <h4>Las calificaciones deben ser entre 1 y 5.</h4>
+    <h5>Siendo 1 (Muy mal) y 5 (Muy bien).</h5>
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pregunta1, "1. ¿El colaborador es puntual?", htmlAttributes: new { @class = "control-label col-md-4" })
+        @*<div class="col-md-10">
+                @Html.EditorFor(model => model.Pregunta1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pregunta1, "", new { @class = "text-danger" })
+            </div>*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Calificacion1, "Calificación:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Calificacion1, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Calificacion1, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pregunta2, "2. ¿El colaborador es comunicativo ante cualquier situación?", htmlAttributes: new { @class = "control-label col-md-6" })
+        @*<div class="col-md-10">
+                @Html.EditorFor(model => model.Pregunta2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pregunta2, "", new { @class = "text-danger" })
+            </div>*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Calificacion2, "Calificación:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Calificacion2, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Calificacion2, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pregunta3, "3. ¿El colaborador muestra un comportamiento amable y respetuoso tanto con sus compañeros de trabajo, como con clientes y posibles nuevos clientes?", htmlAttributes: new { @class = "control-label col-md-12" })
+        @*<div class="col-md-10">
+                @Html.EditorFor(model => model.Pregunta3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pregunta3, "", new { @class = "text-danger" })
+            </div>*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Calificacion3, "Calificación:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Calificacion3, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Calificacion3, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pregunta4, "4. ¿El colaborador muestra iniciativa ante cualquier labor que se realice?", htmlAttributes: new { @class = "control-label col-md-6" })
+        @*<div class="col-md-10">
+                @Html.EditorFor(model => model.Pregunta4, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pregunta4, "", new { @class = "text-danger" })
+            </div>*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Calificacion4, "Calificación:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Calificacion4, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Calificacion4, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pregunta5, "5. ¿Qué tan satisfecho se siente el colaborador en su trabajo diario?", htmlAttributes: new { @class = "control-label col-md-6" })
+        @*<div class="col-md-10">
+                @Html.EditorFor(model => model.Pregunta5, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Pregunta5, "", new { @class = "text-danger" })
+            </div>*@
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Calificacion5, "Calificación:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Calificacion5, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Calificacion5, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.CalificacionFinal, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CalificacionFinal, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CalificacionFinal, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Observaciones, "Observaciones:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Observaciones, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Observaciones, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Registrar evaluación" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+

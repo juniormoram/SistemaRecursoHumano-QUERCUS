@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Cerrar &times;</button>
+
+        <a href="/Planilla/Index" class="w3-bar-item w3-button">Planillas <i class="fa-solid fa-money-check-dollar " style="color: #74C0FC;"></i></a>
+        <a href="/Vacaciones/Index/" class="w3-bar-item w3-button">Vacaciones <i class="fa-solid fa-calendar " style="color: #74C0FC;"></i></a>
+        <a href="/Incapacidad/Index/" class="w3-bar-item w3-button">Incapacidades <i class="fa-solid fa-notes-medical " style="color: #74C0FC;"></i></a>
+        <a href="/PermisoLaboral/Index" class="w3-bar-item w3-button">Permisos laborales <i class="fa-solid fa-calendar " style="color: #74C0FC;"></i></a>
+        <a href="/RegistroMarcas/Index" class="w3-bar-item w3-button">Registro de marcas <i class="fa-solid fa-marker " style="color: #74C0FC;"></i></a>
+        <a href="/Aguinaldo/Index" class="w3-bar-item w3-button">Aguinaldos <i class="fa-solid fa-clock-rotate-left " style="color: #74C0FC;"></i></a>
+        <a href="~/EvaluacionDesem/Index" class="w3-bar-item w3-button">Eva. desempeño <i class="fa-regular fa-flag " style="color: #74C0FC;"></i></a>
+        <a href="/Usuarios/Logout" class="w3-bar-item w3-button">Cerrar sesión <i class="fa-solid fa-right-from-bracket " style="color: #74C0FC;"></i></a>
+
+    </div>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+
+        <div class="container">
+
+            <!--<div class="navbar-header">-->
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - QUERCUS</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script src="https://kit.fontawesome.com/313258c4cc.js" crossorigin="anonymous"></script>
+
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

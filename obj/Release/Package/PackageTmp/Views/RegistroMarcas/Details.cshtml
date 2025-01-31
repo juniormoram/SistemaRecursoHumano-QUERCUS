@@ -1,0 +1,48 @@
+﻿@model RHQuercus.RegistroMarca
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Información de la marca laboral</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <hr />
+        <dt>
+            Hora de ingreso
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraIngreso)
+        </dd>
+
+        <dt>
+            Hora de salida
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoraSalida)
+        </dd>
+
+        @*<dt>
+            Observaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>*@
+    </dl>
+</div>
+<p>    
+    
+</p>

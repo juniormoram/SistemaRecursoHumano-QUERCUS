@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RecursoHumanoQuercusModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aguinaldo">
+    <Key>
+      <PropertyRef Name="IDAguinaldo" />
+    </Key>
+    <Property Name="IDAguinaldo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCedula" Type="Int32" Nullable="false" />
+    <Property Name="Anno" Type="Int32" Nullable="false" />
+    <Property Name="MontoAguinaldo" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Aguinaldo__IDCed__300424B4" FromRole="Aguinaldo" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="IDEstado" />
+    </Key>
+    <Property Name="IDEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EstadoSolicitud" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Incapacidad" Relationship="Self.FK__Incapacid__Estad__36B12243" FromRole="Estado" ToRole="Incapacidad" />
+    <NavigationProperty Name="Liquidacion" Relationship="Self.FK__Liquidaci__Estad__4D94879B" FromRole="Estado" ToRole="Liquidacion" />
+    <NavigationProperty Name="PermisoLaboral" Relationship="Self.FK__PermisoLa__Estad__412EB0B6" FromRole="Estado" ToRole="PermisoLaboral" />
+    <NavigationProperty Name="Vacaciones" Relationship="Self.FK__Vacacione__Estad__3A81B327" FromRole="Estado" ToRole="Vacaciones" />
+  </EntityType>
+  <EntityType Name="EvaluacionDesem">
+    <Key>
+      <PropertyRef Name="IDEvaluacion" />
+    </Key>
+    <Property Name="IDEvaluacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="FechaEva" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Pregunta1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Calificacion1" Type="Double" Nullable="false" />
+    <Property Name="Pregunta2" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Calificacion2" Type="Double" Nullable="false" />
+    <Property Name="Pregunta3" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Calificacion3" Type="Double" Nullable="false" />
+    <Property Name="Pregunta4" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Calificacion4" Type="Double" Nullable="false" />
+    <Property Name="Pregunta5" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Calificacion5" Type="Double" Nullable="false" />
+    <Property Name="CalificacionFinal" Type="Double" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Evaluacio__Emple__46E78A0C" FromRole="EvaluacionDesem" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="Incapacidad">
+    <Key>
+      <PropertyRef Name="IDIncapacidad" />
+    </Key>
+    <Property Name="IDIncapacidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="TipoIncapacidad" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="CantDias" Type="Double" Nullable="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaFinal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MontoEmpresa" Type="Double" Nullable="false" />
+    <Property Name="MontoInca" Type="Double" Nullable="false" />
+    <Property Name="MontoIncaTotal" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK__Incapacid__Estad__36B12243" FromRole="Incapacidad" ToRole="Estado" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Incapacid__Emple__34C8D9D1" FromRole="Incapacidad" ToRole="Persona" />
+    <NavigationProperty Name="TipoIncapacidad1" Relationship="Self.FK__Incapacid__TipoI__35BCFE0A" FromRole="Incapacidad" ToRole="TipoIncapacidad" />
+  </EntityType>
+  <EntityType Name="Liquidacion">
+    <Key>
+      <PropertyRef Name="IDLiquidacion" />
+    </Key>
+    <Property Name="IDLiquidacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaSalida" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Motivo" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="SalarioMensual" Type="Double" Nullable="false" />
+    <Property Name="PromedioDiaLaboral" Type="Double" Nullable="false" />
+    <Property Name="Cesantia" Type="Double" Nullable="false" />
+    <Property Name="Preaviso" Type="Double" Nullable="false" />
+    <Property Name="Aguinaldo" Type="Double" Nullable="false" />
+    <Property Name="Vacaciones" Type="Double" Nullable="false" />
+    <Property Name="MontoTotalLiq" Type="Double" Nullable="false" />
+    <Property Name="Observaciones" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK__Liquidaci__Estad__4D94879B" FromRole="Liquidacion" ToRole="Estado" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Liquidaci__Emple__4BAC3F29" FromRole="Liquidacion" ToRole="Persona" />
+    <NavigationProperty Name="MotivoLiq" Relationship="Self.FK__Liquidaci__Motiv__4CA06362" FromRole="Liquidacion" ToRole="MotivoLiq" />
+  </EntityType>
+  <EntityType Name="MotivoLiq">
+    <Key>
+      <PropertyRef Name="IDMotivo" />
+    </Key>
+    <Property Name="IDMotivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Liquidacion" Relationship="Self.FK__Liquidaci__Motiv__4CA06362" FromRole="MotivoLiq" ToRole="Liquidacion" />
+  </EntityType>
+  <EntityType Name="Ocupacion">
+    <Key>
+      <PropertyRef Name="IDOcupacion" />
+    </Key>
+    <Property Name="IDOcupacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreOcu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Salario" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Persona__Ocupaci__2A4B4B5E" FromRole="Ocupacion" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="PermisoLaboral">
+    <Key>
+      <PropertyRef Name="IDPermiso" />
+    </Key>
+    <Property Name="IDPermiso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="TipoPermiso" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaFinal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CantDias" Type="Double" Nullable="false" />
+    <Property Name="Observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PagoObligatorio" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK__PermisoLa__Estad__412EB0B6" FromRole="PermisoLaboral" ToRole="Estado" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__PermisoLa__Emple__3F466844" FromRole="PermisoLaboral" ToRole="Persona" />
+    <NavigationProperty Name="TipoPermiso1" Relationship="Self.FK__PermisoLa__TipoP__403A8C7D" FromRole="PermisoLaboral" ToRole="TipoPermiso" />
+  </EntityType>
+  <EntityType Name="Persona">
+    <Key>
+      <PropertyRef Name="IDCedula" />
+    </Key>
+    <Property Name="IDCedula" Type="Int32" Nullable="false" />
+    <Property Name="NombrePers" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Celular" Type="Int32" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="Boolean" />
+    <Property Name="Ocupacion" Type="Int32" Nullable="false" />
+    <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CantVacaciones" Type="Double" />
+    <Property Name="NombreContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ParentescoContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CelularContacto" Type="Int32" />
+    <NavigationProperty Name="Aguinaldo" Relationship="Self.FK__Aguinaldo__IDCed__300424B4" FromRole="Persona" ToRole="Aguinaldo" />
+    <NavigationProperty Name="EvaluacionDesem" Relationship="Self.FK__Evaluacio__Emple__46E78A0C" FromRole="Persona" ToRole="EvaluacionDesem" />
+    <NavigationProperty Name="Incapacidad" Relationship="Self.FK__Incapacid__Emple__34C8D9D1" FromRole="Persona" ToRole="Incapacidad" />
+    <NavigationProperty Name="Liquidacion" Relationship="Self.FK__Liquidaci__Emple__4BAC3F29" FromRole="Persona" ToRole="Liquidacion" />
+    <NavigationProperty Name="Ocupacion1" Relationship="Self.FK__Persona__Ocupaci__2A4B4B5E" FromRole="Persona" ToRole="Ocupacion" />
+    <NavigationProperty Name="PermisoLaboral" Relationship="Self.FK__PermisoLa__Emple__3F466844" FromRole="Persona" ToRole="PermisoLaboral" />
+    <NavigationProperty Name="Planilla" Relationship="Self.FK__Planilla__Emplea__440B1D61" FromRole="Persona" ToRole="Planilla" />
+    <NavigationProperty Name="RegistroMarca" Relationship="Self.FK__RegistroM__IDCed__5FB337D6" FromRole="Persona" ToRole="RegistroMarca" />
+    <NavigationProperty Name="Vacaciones" Relationship="Self.FK__Vacacione__Emple__398D8EEE" FromRole="Persona" ToRole="Vacaciones" />
+  </EntityType>
+  <EntityType Name="Planilla">
+    <Key>
+      <PropertyRef Name="IDPlanilla" />
+    </Key>
+    <Property Name="IDPlanilla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="Periodo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaPlanill" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Salario" Type="Double" Nullable="false" />
+    <Property Name="CCSS" Type="Double" Nullable="false" />
+    <Property Name="Renta" Type="Double" Nullable="false" />
+    <Property Name="MontoInca" Type="Double" Nullable="false" />
+    <Property Name="Total" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Planilla__Emplea__440B1D61" FromRole="Planilla" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="RegistroMarca">
+    <Key>
+      <PropertyRef Name="IDMarca" />
+    </Key>
+    <Property Name="IDMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCedula" Type="Int32" Nullable="false" />
+    <Property Name="HoraIngreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HoraSalida" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__RegistroM__IDCed__5FB337D6" FromRole="RegistroMarca" ToRole="Persona" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TipoIncapacidad">
+    <Key>
+      <PropertyRef Name="IDTipoInca" />
+    </Key>
+    <Property Name="IDTipoInca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreInca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Incapacidad" Relationship="Self.FK__Incapacid__TipoI__35BCFE0A" FromRole="TipoIncapacidad" ToRole="Incapacidad" />
+  </EntityType>
+  <EntityType Name="TipoPermiso">
+    <Key>
+      <PropertyRef Name="IDTipoPermi" />
+    </Key>
+    <Property Name="IDTipoPermi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PermisoLaboral" Relationship="Self.FK__PermisoLa__TipoP__403A8C7D" FromRole="TipoPermiso" ToRole="PermisoLaboral" />
+  </EntityType>
+  <EntityType Name="TipoRol">
+    <Key>
+      <PropertyRef Name="IDRol" />
+    </Key>
+    <Property Name="IDRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreRol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Rol__75A278F5" FromRole="TipoRol" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IDUsuario" />
+    </Key>
+    <Property Name="IDUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Salt" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Rol" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TipoRol" Relationship="Self.FK__Usuario__Rol__75A278F5" FromRole="Usuario" ToRole="TipoRol" />
+  </EntityType>
+  <EntityType Name="Vacaciones">
+    <Key>
+      <PropertyRef Name="IDVacas" />
+    </Key>
+    <Property Name="IDVacas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="CantDias" Type="Double" Nullable="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaFinal" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Observacion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Estado1" Relationship="Self.FK__Vacacione__Estad__3A81B327" FromRole="Vacaciones" ToRole="Estado" />
+    <NavigationProperty Name="Persona" Relationship="Self.FK__Vacacione__Emple__398D8EEE" FromRole="Vacaciones" ToRole="Persona" />
+  </EntityType>
+  <Association Name="FK__Aguinaldo__IDCed__300424B4">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Aguinaldo" Type="Self.Aguinaldo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="Aguinaldo">
+        <PropertyRef Name="IDCedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Incapacid__Estad__36B12243">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IDEstado" />
+      </Principal>
+      <Dependent Role="Incapacidad">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Liquidaci__Estad__4D94879B">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Liquidacion" Type="Self.Liquidacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IDEstado" />
+      </Principal>
+      <Dependent Role="Liquidacion">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PermisoLa__Estad__412EB0B6">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="PermisoLaboral" Type="Self.PermisoLaboral" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IDEstado" />
+      </Principal>
+      <Dependent Role="PermisoLaboral">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vacacione__Estad__3A81B327">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Vacaciones" Type="Self.Vacaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="IDEstado" />
+      </Principal>
+      <Dependent Role="Vacaciones">
+        <PropertyRef Name="Estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Evaluacio__Emple__46E78A0C">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="EvaluacionDesem" Type="Self.EvaluacionDesem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="EvaluacionDesem">
+        <PropertyRef Name="Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Incapacid__Emple__34C8D9D1">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="Incapacidad">
+        <PropertyRef Name="Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Incapacid__TipoI__35BCFE0A">
+    <End Role="TipoIncapacidad" Type="Self.TipoIncapacidad" Multiplicity="1" />
+    <End Role="Incapacidad" Type="Self.Incapacidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoIncapacidad">
+        <PropertyRef Name="IDTipoInca" />
+      </Principal>
+      <Dependent Role="Incapacidad">
+        <PropertyRef Name="TipoIncapacidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Liquidaci__Emple__4BAC3F29">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Liquidacion" Type="Self.Liquidacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="Liquidacion">
+        <PropertyRef Name="Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Liquidaci__Motiv__4CA06362">
+    <End Role="MotivoLiq" Type="Self.MotivoLiq" Multiplicity="1" />
+    <End Role="Liquidacion" Type="Self.Liquidacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MotivoLiq">
+        <PropertyRef Name="IDMotivo" />
+      </Principal>
+      <Dependent Role="Liquidacion">
+        <PropertyRef Name="Motivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Persona__Ocupaci__2A4B4B5E">
+    <End Role="Ocupacion" Type="Self.Ocupacion" Multiplicity="1" />
+    <End Role="Persona" Type="Self.Persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ocupacion">
+        <PropertyRef Name="IDOcupacion" />
+      </Principal>
+      <Dependent Role="Persona">
+        <PropertyRef Name="Ocupacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PermisoLa__Emple__3F466844">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="PermisoLaboral" Type="Self.PermisoLaboral" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="PermisoLaboral">
+        <PropertyRef Name="Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PermisoLa__TipoP__403A8C7D">
+    <End Role="TipoPermiso" Type="Self.TipoPermiso" Multiplicity="1" />
+    <End Role="PermisoLaboral" Type="Self.PermisoLaboral" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPermiso">
+        <PropertyRef Name="IDTipoPermi" />
+      </Principal>
+      <Dependent Role="PermisoLaboral">
+        <PropertyRef Name="TipoPermiso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Planilla__Emplea__440B1D61">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Planilla" Type="Self.Planilla" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="Planilla">
+        <PropertyRef Name="Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RegistroM__IDCed__5FB337D6">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="RegistroMarca" Type="Self.RegistroMarca" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="RegistroMarca">
+        <PropertyRef Name="IDCedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vacacione__Emple__398D8EEE">
+    <End Role="Persona" Type="Self.Persona" Multiplicity="1" />
+    <End Role="Vacaciones" Type="Self.Vacaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persona">
+        <PropertyRef Name="IDCedula" />
+      </Principal>
+      <Dependent Role="Vacaciones">
+        <PropertyRef Name="Empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__Rol__75A278F5">
+    <End Role="TipoRol" Type="Self.TipoRol" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoRol">
+        <PropertyRef Name="IDRol" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="Rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RecursoHumanoQuercusEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aguinaldo" EntityType="Self.Aguinaldo" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" />
+    <EntitySet Name="EvaluacionDesem" EntityType="Self.EvaluacionDesem" />
+    <EntitySet Name="Incapacidad" EntityType="Self.Incapacidad" />
+    <EntitySet Name="Liquidacion" EntityType="Self.Liquidacion" />
+    <EntitySet Name="MotivoLiq" EntityType="Self.MotivoLiq" />
+    <EntitySet Name="Ocupacion" EntityType="Self.Ocupacion" />
+    <EntitySet Name="PermisoLaboral" EntityType="Self.PermisoLaboral" />
+    <EntitySet Name="Persona" EntityType="Self.Persona" />
+    <EntitySet Name="Planilla" EntityType="Self.Planilla" />
+    <EntitySet Name="RegistroMarca" EntityType="Self.RegistroMarca" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TipoIncapacidad" EntityType="Self.TipoIncapacidad" />
+    <EntitySet Name="TipoPermiso" EntityType="Self.TipoPermiso" />
+    <EntitySet Name="TipoRol" EntityType="Self.TipoRol" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" />
+    <AssociationSet Name="FK__Aguinaldo__IDCed__300424B4" Association="Self.FK__Aguinaldo__IDCed__300424B4">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Aguinaldo" EntitySet="Aguinaldo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Incapacid__Estad__36B12243" Association="Self.FK__Incapacid__Estad__36B12243">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Incapacidad" EntitySet="Incapacidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Liquidaci__Estad__4D94879B" Association="Self.FK__Liquidaci__Estad__4D94879B">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Liquidacion" EntitySet="Liquidacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PermisoLa__Estad__412EB0B6" Association="Self.FK__PermisoLa__Estad__412EB0B6">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="PermisoLaboral" EntitySet="PermisoLaboral" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vacacione__Estad__3A81B327" Association="Self.FK__Vacacione__Estad__3A81B327">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Vacaciones" EntitySet="Vacaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Evaluacio__Emple__46E78A0C" Association="Self.FK__Evaluacio__Emple__46E78A0C">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="EvaluacionDesem" EntitySet="EvaluacionDesem" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Incapacid__Emple__34C8D9D1" Association="Self.FK__Incapacid__Emple__34C8D9D1">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Incapacidad" EntitySet="Incapacidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Incapacid__TipoI__35BCFE0A" Association="Self.FK__Incapacid__TipoI__35BCFE0A">
+      <End Role="TipoIncapacidad" EntitySet="TipoIncapacidad" />
+      <End Role="Incapacidad" EntitySet="Incapacidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Liquidaci__Emple__4BAC3F29" Association="Self.FK__Liquidaci__Emple__4BAC3F29">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Liquidacion" EntitySet="Liquidacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Liquidaci__Motiv__4CA06362" Association="Self.FK__Liquidaci__Motiv__4CA06362">
+      <End Role="MotivoLiq" EntitySet="MotivoLiq" />
+      <End Role="Liquidacion" EntitySet="Liquidacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Persona__Ocupaci__2A4B4B5E" Association="Self.FK__Persona__Ocupaci__2A4B4B5E">
+      <End Role="Ocupacion" EntitySet="Ocupacion" />
+      <End Role="Persona" EntitySet="Persona" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PermisoLa__Emple__3F466844" Association="Self.FK__PermisoLa__Emple__3F466844">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="PermisoLaboral" EntitySet="PermisoLaboral" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PermisoLa__TipoP__403A8C7D" Association="Self.FK__PermisoLa__TipoP__403A8C7D">
+      <End Role="TipoPermiso" EntitySet="TipoPermiso" />
+      <End Role="PermisoLaboral" EntitySet="PermisoLaboral" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Planilla__Emplea__440B1D61" Association="Self.FK__Planilla__Emplea__440B1D61">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Planilla" EntitySet="Planilla" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RegistroM__IDCed__5FB337D6" Association="Self.FK__RegistroM__IDCed__5FB337D6">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="RegistroMarca" EntitySet="RegistroMarca" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vacacione__Emple__398D8EEE" Association="Self.FK__Vacacione__Emple__398D8EEE">
+      <End Role="Persona" EntitySet="Persona" />
+      <End Role="Vacaciones" EntitySet="Vacaciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__Rol__75A278F5" Association="Self.FK__Usuario__Rol__75A278F5">
+      <End Role="TipoRol" EntitySet="TipoRol" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <FunctionImport Name="sp_ActualizarVacaciones">
+      <Parameter Name="IDCedula" Mode="In" Type="Int32" />
+      <Parameter Name="CantVacas" Mode="In" Type="Double" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

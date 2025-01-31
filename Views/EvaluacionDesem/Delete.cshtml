@@ -1,0 +1,133 @@
+﻿@model RHQuercus.EvaluacionDesem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Desea eliminar esta evaluación?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <dt>
+            Fecha de evaluación
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaEva)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Pregunta1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregunta5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pregunta5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalificacionFinal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalificacionFinal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observaciones)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        </div>
+    }
+</div>

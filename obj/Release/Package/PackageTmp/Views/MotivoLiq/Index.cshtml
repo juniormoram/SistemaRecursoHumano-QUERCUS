@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RHQuercus.MotivoLiq>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Motivos de liquidaciones laborales</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Motivo
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDMotivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.ActionLink("Actualizar motivo", "Edit", new { id = item.IDMotivo }, new { @class = "btn btn-info" }) |
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,95 @@
+﻿@model RHQuercus.Incapacidad
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Desea eliminar esta incapacidad?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+
+        <dt>
+            Tipo de incapacidad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoIncapacidad1.NombreInca)
+        </dd>
+
+        <dt>
+            Estado de la solicitud
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado1.EstadoSolicitud)
+        </dd>
+        <hr />
+
+        <dt>
+            Fecha de inicio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            Fecha final
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinal)
+        </dd>
+        <dt>
+            Cant. de días
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantDias)
+        </dd>
+        <hr />
+        <dt>
+            Monto de empresa
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.MontoEmpresa)
+        </dd>
+
+        <dt>
+            Monto de incapacidad
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.MontoInca)
+        </dd>
+
+        <dt>
+            Total de incapacidad
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.MontoIncaTotal)
+        </dd>
+        <hr />
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        </div>
+    }
+</div>

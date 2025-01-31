@@ -1,0 +1,63 @@
+﻿@model RHQuercus.Vacaciones
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Información de la solicitud de vacaciones</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+        <hr />        
+        <dt>
+            Estado de la solicitud
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado1.EstadoSolicitud)
+        </dd>
+        <hr />
+        <dt>
+            Fecha de inicio
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            Fecha de finalización
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFinal)
+        </dd>
+
+        <dt>
+            Cantidad de días
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CantDias)
+        </dd>
+
+        <dt>
+            Observaciones
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacion)
+        </dd>
+
+    </dl>
+</div>
+

@@ -1,0 +1,83 @@
+﻿@model RHQuercus.Planilla
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Desea eliminar esta planilla?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Colaborador
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </dd>
+
+        <dt>
+            Fecha de planilla
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaPlanill)
+        </dd>
+
+        <dt>
+            Quincena
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+        <hr />
+
+        <dt>
+            Monto CCSS
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.CCSS)
+        </dd>
+        <dt>
+            Monto Renta
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Renta)
+        </dd>
+        <dt>
+            Monto incapacidades
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.MontoInca)
+        </dd>
+        <hr />
+        <dt>
+            Salario
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Salario)
+        </dd>
+        <dt>
+            Monto total
+        </dt>
+
+        <dd>
+            ₡ @Html.DisplayFor(model => model.Total)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        </div>
+    }
+</div>

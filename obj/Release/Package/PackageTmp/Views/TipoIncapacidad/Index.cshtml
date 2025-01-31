@@ -1,0 +1,34 @@
+﻿@model IEnumerable<RHQuercus.TipoIncapacidad>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tipos de incapacidad</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Nombre de incapacidad
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDTipoInca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreInca)
+        </td>
+        <td>
+            @Html.ActionLink("Actualizar tipo", "Edit", new { id = item.IDTipoInca }, new { @class = "btn btn-info" }) |
+        </td>
+    </tr>
+}
+
+</table>

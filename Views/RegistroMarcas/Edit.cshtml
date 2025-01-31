@@ -1,0 +1,63 @@
+﻿@model RHQuercus.RegistroMarca
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Registrar hora de salida</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IDCedula)
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.HoraIngreso)
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.HoraSalida)
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.IDMarca)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IDCedula, "Colaborador", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.Persona.NombrePers)
+            @Html.DisplayFor(model => model.Persona.Apellidos)
+        </div>
+        <div class="col-md-10">
+            @Html.ValidationMessageFor(model => model.IDCedula, "", new { @class = "text-danger" })
+        </div>
+    </div>    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HoraIngreso, "Hora de ingreso", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.HoraIngreso)
+        </div>
+        <div class="col-md-10">
+            @Html.ValidationMessageFor(model => model.HoraIngreso, "", new { @class = "text-danger" })
+        </div>
+    </div>    
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.Observacion, "Observaciones", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Observacion, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Observacion, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Registrar hora de salida" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+

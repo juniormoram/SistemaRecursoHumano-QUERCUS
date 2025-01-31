@@ -1,0 +1,80 @@
+﻿@model RHQuercus.Usuario
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout_Login.cshtml";
+}
+
+<hr />
+<h2 class="form">Bienvenido!</h2>
+
+@using (Html.BeginForm("Acceso", "Usuarios", FormMethod.Post))
+{
+    @*@Html.AntiForgeryToken()*@
+    <div class="form">
+
+        <br />
+        <strong> @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" }) </strong>
+        <div class="form">
+            @Html.LabelFor(model => model.IDUsuario, "Identificación"@*htmlAttributes: new { @class = "control-label col-md-2" }*@)
+            @Html.ValidationMessageFor(model => model.IDUsuario, "Campo obligatorio", new { @class = "text-danger" })
+            <div class="form">
+                @Html.EditorFor(model => model.IDUsuario, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form">
+            @Html.LabelFor(model => model.Contrasena, "Contraseña"@*, htmlAttributes: new { @class = "control-label col-md-2" }*@)
+            <div class="form">
+                @Html.EditorFor(model => model.Contrasena, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+                <button id="verPassword" class="btn btn-default" type="button">
+                    <i class="glyphicon glyphicon-eye-open"></i>
+            </div>
+        </div>
+
+        <div class="form">
+            <div class="form">
+                <input type="submit" value="Iniciar sesión" class="btn btn-success" />
+            </div>
+            <div class="form">
+                @Html.ActionLink("Registro de nuevo usuario", "Create", "Usuarios")
+            </div>
+
+        </div>
+        <br />
+
+        <div class="form">
+
+            <img src="~/Imagenes/Querimg.jpg" alt="Quercus" class="img-rounded" width="170" height="170" />
+
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var alertMessage = '@TempData["AlertMessage"]';
+        if (alertMessage) {
+            alert(alertMessage);
+        }
+    });
+</script>
+
+<script>
+    $('#verPassword').on('mousedown', function () {
+        $('#Contrasena').attr("type", "text");
+    });
+
+    $('#verPassword').on('mouseup mouseleave', function () {
+        $('#Contrasena').attr("type", "password");
+    });
+</script>
+
+
